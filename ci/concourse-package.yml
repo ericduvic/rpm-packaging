@@ -1,0 +1,15 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: alpine
+    tag: latest
+
+inputs:
+- name: concourse-tag
+- name: concourse-packaging
+
+run:
+  path: concourse-packaging/ci/scripts/concourse-packaging

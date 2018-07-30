@@ -1,0 +1,23 @@
+jobs:
+- name: concourse
+  plan:
+  - get: concourse-packaging
+    trigger: true
+  - get: concourse-tag
+    trigger: true
+  - task: concourse-package
+    file: concourse-package/ci/concourse-package.yml
+
+resources:
+- name: concourse-tag
+  type: git
+  source:
+    uri: https://github.com/concourse/concourse.git
+    branch: master
+    tag_filter: 'v*'
+
+- name: concourse-packaging
+  type: git
+  source:
+    uri: https://github.com/ericduvic/concourse_packaging.git
+    branch: master

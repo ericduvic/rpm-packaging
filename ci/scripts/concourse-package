@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e -x
+
+# Update and install git
+apk --update add git
+
+# Get git tag
+TAG=$(git tag -l --contains HEAD | head -n 1)
+
+# Download Concourse and Fly
+wget https://github.com/concourse/concourse/releases/download/${TAG}/concourse_linux_amd64
+wget https://github.com/concourse/concourse/releases/download/${TAG}/fly_linux_amd64
+
+# Set executable
+chmod +x fly_linux_amd64 concourse_linux_amd64
+
+# Package that goodness
+fpm -s dir -t rpm -n concourse -v 4.0.0 fly_linux_amd64=/opt/concourse/fly concourse_linux_amd64=/opt/concourse/concourse
