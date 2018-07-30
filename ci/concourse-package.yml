@@ -12,4 +12,4 @@ inputs:
 - name: concourse-packaging
 
 run:
-  path: concourse-packaging/ci/scripts/concourse-packaging
+  path: concourse-packaging/ci/scripts/concourse-package
