@@ -5,6 +5,9 @@ set -e -x
 # Update and install git
 apk --update add git
 
+# Install FPM
+gem install fpm --no-doc --no-ri
+
 # Get git tag
 cd concourse-tag
 TAG=$(git describe --tags | head -n 1)
