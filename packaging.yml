@@ -5,8 +5,8 @@ jobs:
     trigger: true
   - get: concourse-tag
     trigger: true
-  - task: concourse-package
-    file: concourse-package/ci/concourse-package.yml
+  - task: concourse-packaging
+    file: concourse-packaging/ci/concourse-package.yml
 
 resources:
 - name: concourse-tag
