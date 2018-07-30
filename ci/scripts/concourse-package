@@ -3,7 +3,7 @@
 set -e -x
 
 # Update and install git
-apk --update add git make gcc
+apk --update add git make gcc libc-dev
 
 # Install FPM
 gem install fpm --no-doc --no-ri
