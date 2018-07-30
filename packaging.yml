@@ -27,8 +27,7 @@ resources:
   type: git
   source:
     uri: https://github.com/Netflix/dynomite.git
-    branch: master
-    tag_filter: 'v*'
+    tag_filter: 'v?.?.?'
 
 - name: rpm-packaging
   type: git
