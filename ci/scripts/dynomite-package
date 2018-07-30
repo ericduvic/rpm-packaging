@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e -x
+
+# Update and install dependencies
+apk --update add git make gcc libc-dev
+
+# Get git tag
+cd dynomite-tag
+TAG=$(git describe --tags | head -n 1)
+
+# Build dynomite
+autoreconf -fvi
+./configure --enable-debug=yes
+make
+src/dynomite -h
+
+# Package that goodness
+# fpm -s dir -t rpm -n dynomite -v ${TAG:1}
+
+# Prove that it works, here's where you'd push to Pulp or some other aritfact repo
+# rpm -qlp dynomite-${TAG:1}-1.x86_64.rpm

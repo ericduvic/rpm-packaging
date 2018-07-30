@@ -9,7 +9,7 @@ image_resource:
 
 inputs:
 - name: concourse-tag
-- name: concourse-packaging
+- name: rpm-packaging
 
 run:
-  path: concourse-packaging/ci/scripts/concourse-package
+  path: rpm-packaging/ci/scripts/concourse-package

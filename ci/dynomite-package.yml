@@ -1,0 +1,14 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: alpine
+
+inputs:
+- name: dynomite-tag
+- name: rpm-packaging
+
+run:
+  path: rpm-packaging/ci/scripts/dynomite-package
