@@ -21,4 +21,4 @@ wget https://github.com/concourse/concourse/releases/download/${TAG}/fly_linux_a
 chmod +x fly_linux_amd64 concourse_linux_amd64
 
 # Package that goodness
-fpm -s dir -t rpm -n concourse -v 4.0.0 fly_linux_amd64=/opt/concourse/fly concourse_linux_amd64=/opt/concourse/concourse
+fpm -s dir -t rpm -n concourse -v ${TAG:1} fly_linux_amd64=/opt/concourse/fly concourse_linux_amd64=/opt/concourse/concourse
