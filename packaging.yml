@@ -2,7 +2,6 @@ jobs:
 - name: concourse
   plan:
   - get: rpm-packaging
-    trigger: true
   - get: concourse-tag
     trigger: true
   - task: concourse-packaging
@@ -11,7 +10,6 @@ jobs:
 - name: dynomite
   plan:
   - get: rpm-packaging
-    trigger: true
   - get: dynomite-tag
     trigger: true
   - task: dynomite-packaging
