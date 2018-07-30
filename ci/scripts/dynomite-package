@@ -3,7 +3,7 @@
 set -e -x
 
 # Update and install dependencies
-apk --update add git make gcc libc-dev
+apk --update add git make gcc libc-dev autoconf
 
 # Get git tag
 cd dynomite-tag
