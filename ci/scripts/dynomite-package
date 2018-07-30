@@ -3,7 +3,7 @@
 set -e -x
 
 # Update and install dependencies
-apk --update add git automake make gcc libc-dev autoconf libtool openssl-dev gettext build-base musl-dev coreutils
+apk --update add git automake make gcc libc-dev autoconf libtool openssl-dev gettext build-base musl-dev coreutils linux-firmware
 
 # Get git tag
 cd dynomite-tag
