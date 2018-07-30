@@ -15,6 +15,7 @@ jobs:
   - get: dynomite-tag
     trigger: true
   - task: dynomite-packaging
+    file: rpm-packaging/ci/dynomite-package.yml
 
 resources:
 - name: concourse-tag
