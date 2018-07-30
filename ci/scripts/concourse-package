@@ -6,7 +6,9 @@ set -e -x
 apk --update add git
 
 # Get git tag
+cd concourse-tag
 TAG=$(git describe --tags | head -n 1)
+cd ..
 
 # Download Concourse and Fly
 wget https://github.com/concourse/concourse/releases/download/${TAG}/concourse_linux_amd64
